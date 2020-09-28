@@ -1,0 +1,18 @@
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Status extends Model
+{
+    public function companies()
+    {
+        return $this->belongsTo('App\Company', "company_id");
+    }
+    public function orders()
+    {
+        return $this->belongsToMany(Order::class);
+    }
+
+}
